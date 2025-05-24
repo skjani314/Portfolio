@@ -1,4 +1,4 @@
-import React, { useEffect, memo, useMemo } from "react"
+import React, { useEffect, memo, useState } from "react"
 import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck } from "lucide-react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -113,11 +113,17 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
 ));
 
 const AboutPage = () => {
-  // Memoized calculations
-  const { totalProjects, totalCertificates, YearExperience } = useMemo(() => {
+  // State for stats
+  const [stats, setStats] = useState({
+    totalProjects: 0,
+    totalCertificates: 0,
+    YearExperience: 0,
+  });
+
+  // Function to calculate stats
+  const calculateStats = () => {
     const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
     const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
-    
     const startDate = new Date("2025-05-01");
     const today = new Date();
     const experience = today.getFullYear() - startDate.getFullYear() -
@@ -128,7 +134,59 @@ const AboutPage = () => {
       totalCertificates: storedCertificates.length,
       YearExperience: experience
     };
+  };
+
+  // Update stats on mount and when localStorage changes
+  useEffect(() => {
+    // Initial load
+    setStats(calculateStats());
+
+    // Listen for localStorage changes (from other tabs)
+    const handleStorage = (e) => {
+      if (e.key === "projects" || e.key === "certificates") {
+        setStats(calculateStats());
+      }
+    };
+    window.addEventListener("storage", handleStorage);
+
+    // Optionally, poll for changes in the same tab (since localStorage events don't fire in the same tab)
+    const interval = setInterval(() => {
+      setStats(calculateStats());
+    }, 1000);
+
+    return () => {
+      window.removeEventListener("storage", handleStorage);
+      clearInterval(interval);
+    };
   }, []);
+
+  // Memoized stats data
+  const statsData = [
+    {
+      icon: Code,
+      color: "from-[#6366f1] to-[#a855f7]",
+      value: stats.totalProjects,
+      label: "Total Projects",
+      description: "Innovative web solutions crafted",
+      animation: "fade-right",
+    },
+    {
+      icon: Award,
+      color: "from-[#a855f7] to-[#6366f1]",
+      value: stats.totalCertificates,
+      label: "Certificates",
+      description: "Professional skills validated",
+      animation: "fade-up",
+    },
+    {
+      icon: Globe,
+      color: "from-[#6366f1] to-[#a855f7]",
+      value: stats.YearExperience,
+      label: "Years of Experience",
+      description: "Continuous learning journey",
+      animation: "fade-left",
+    },
+  ];
 
   // Optimized AOS initialization
   useEffect(() => {
@@ -153,34 +211,6 @@ const AboutPage = () => {
       clearTimeout(resizeTimer);
     };
   }, []);
-
-  // Memoized stats data
-  const statsData = useMemo(() => [
-    {
-      icon: Code,
-      color: "from-[#6366f1] to-[#a855f7]",
-      value: totalProjects,
-      label: "Total Projects",
-      description: "Innovative web solutions crafted",
-      animation: "fade-right",
-    },
-    {
-      icon: Award,
-      color: "from-[#a855f7] to-[#6366f1]",
-      value: totalCertificates,
-      label: "Certificates",
-      description: "Professional skills validated",
-      animation: "fade-up",
-    },
-    {
-      icon: Globe,
-      color: "from-[#6366f1] to-[#a855f7]",
-      value: YearExperience,
-      label: "Years of Experience",
-      description: "Continuous learning journey",
-      animation: "fade-left",
-    },
-  ], [totalProjects, totalCertificates, YearExperience]);
 
   return (
     <div

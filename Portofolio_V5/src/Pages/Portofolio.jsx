@@ -157,60 +157,68 @@ export default function FullWidthTabs() {
 
 const projectData = [
   {
-    "id": "Aritmatika Solver",
-    "Img": "https://lh3.googleusercontent.com/pw/AP1GczN8nCgz3uDAYTz959bL9wjcgXhPsT2-czigri6o-HkkyyIJ2uEagCkxFUsJtdcFFKoSblBWf0VUi_UY2bgrcHCmgG-cFxBz8zH7CM9AM0B6YpxmkMJ1gmL6dGSzzb0efVgKBcnDg_4eWmhmv0TSypNx=w1326-h679-s-no-gm?authuser=0",
-    "Link": "https://replit.com/@EkiZR/Aritmatika-Project",
-    "Github": "https://github.com/EkiZR/Aritmatika-Solver",
-    "Description": "Program ini dirancang untuk mempermudah pengguna dalam menyelesaikan soal-soal Aritmatika secara otomatis dengan menggunakan bahasa pemrograman Python. Tujuan utama dari program ini adalah untuk membantu pengguna, terutama pelajar, dalam menyelesaikan soal-soal Aritmatika dengan lebih cepat dan mudah",
-    "Features": [
-      "Menghitung suku tertentu dari barisan aritmatika dengan menggunakan rumus suku ke-n.",
-      "Menentukan suku pertama atau beda jika hanya dua suku diketahui dalam barisan aritmatika.",
-      "Menghitung jumlah n suku pertama dari deret aritmatika dengan langkah perhitungan yang jelas."
-    ],
-    "Title": "Aritmatika Solver",
-    "TechStack": ["Python"]
+    "id": "Pharmacy",
+    "Img": "/Pharmacy.png",
+    "Link": "https://pharmacy-xi-one.vercel.app/",
+    "Github": "https://github.com/skjani314/PHARMACY",
+"Description": "This project was designed to streamline and digitalize campus pharmacy operations by providing a user-friendly system for both students and administrators. Its main goal is to simplify medicine availability checks, improve inventory management, and enhance decision-making through real-time data and analytics.",
+   "Features": [
+  "Real-time display of medicine availability for student users to reduce manual inquiries.",
+  "Role-based access control for students and administrators with separate functionality.",
+  "Inventory management tools for admins to add, update, and monitor stock levels and expiry dates.",
+  "Dashboard analytics to track low stock, expired items, and daily transactions for better decision-making.",
+  "User management system to handle student registrations and maintain accurate records."
+],
+
+    "Title": "Pharmacy",
+    "TechStack": ["ReactJS", "Botstrap", "antd","CSS", "Material UI", "MongoDB", "ExpressJS", "NodeJS"],
   },
   {
-    "id": "AutoChat-Discord",
-    "TechStack": ["ReactJS", "AOS", "Tailwind CSS", "Material UI", "Python", "Firebase", "Sweetalert2", "Vite", "CSS"],
-    "Github": "Private",
-    "Description": "AutoChat adalah solusi otomatisasi untuk mengirim pesan ke saluran Discord secara terjadwal. Pengguna dapat menentukan saluran tujuan, isi pesan, dan interval penundaan pengiriman pesan. Program ini berjalan 24/7, memungkinkan pengiriman pesan otomatis tanpa intervensi manual, sehingga memudahkan promosi atau komunikasi di Discord secara efisien.",
-    "Title": "AutoChat-Discord",
-    "Link": "https://autochat.my.id/",
-    "Features": [
-      "Customize the message content as needed.",
-      "Send messages to multiple Discord channels simultaneously.",
-      "Set custom delay intervals between messages for controlled messaging.",
-      "AutoChat runs non-stop to ensure continuous messaging."
-    ],
-    "Img": "https://lh3.googleusercontent.com/pw/AP1GczO_D4RyZJmuV6r6cm1-gD4VURTIzUUvBa5JAbV7On4tJ60rL5KCvn-5QWIlZ2McjdcJ75QaZJdgM79d2_5XfEVQC_D1XCJZkh7pKX4aPLHzRnI2SsywyzU7NaapNLcCwrMjuHO3CD899cIgQGtizeQj=w1920-h983-s-no-gm"
+    "id": "Skill Link",
+    "TechStack": ["ReactJS", "MongoDB", "Bootstrap","antd", "ExpressJS", "NodeJS", "CSS"],
+    "Github": "https://github.com/skjani314/SkillLink",
+"Description":"This E-Commerce platform is a scalable solution designed to support four distinct user roles: customer, supplier, agent, and admin. It streamlines operations by enabling agent-based skill verification to onboard suppliers faster, while the integrated admin panel simplifies user and workflow management. With secure Role-Based Access Control (RBAC), the system ensures data protection and prevents unauthorized access, making it ideal for managing a growing online marketplace.",    "Title": "Skill-Link",
+    "Link": "https://skill-link-three.vercel.app/",
+   "Features": [
+  "Supports four distinct user roles: customer, supplier, agent, and admin.",
+  "Agent-based skill verification system to validate suppliers before onboarding.",
+  "Comprehensive admin panel for user, role, and workflow management.",
+  "Secure Role-Based Access Control (RBAC) to protect data and restrict access.",
+  "Scalable architecture tested with 100+ users in initial deployment phase."
+],
+    "Img": "/SkillLink.png"
   },
   {
-    "id": "Buku Catatan",
-    "Link": "https://github.com/EkiZR/Buku-Catatan",
+    "id": "Smart-Mess",
+    "Link": "https://mess-monetering.vercel.app/",
     "Features": [
-      "Pengguna dapat membuat, mengedit, dan mengatur catatan dengan mudah sesuai kebutuhan.",
-      "Memungkinkan pengguna untuk menemukan catatan dengan cepat menggunakan kata kunci."
-    ],
-    "Title": "Buku Catatan",
-    "TechStack": ["ReactJS", "Vite", "CSS"],
-    "Img": "https://lh3.googleusercontent.com/pw/AP1GczM9nypDGzHROBamkpFL4a4H0w9LDD4FEvC1rPTRcUPunmWp6VTHwxrh88soMRZkTClx1bEEH7e9GZvjzltP5Pij4P4ou2e3wTvgIbggRxxdghrLfb5xuJnUiio_aZ6EHM5oF70Rv6ZbfsgXwPibBgrM=w1326-h679-s-no-gm?authuser=0",
-    "Description": "Buku Catatan adalah website yang memungkinkan pengguna untuk membuat, menyimpan, dan mengelola catatan secara digital. Dengan antarmuka yang sederhana, pengguna dapat menulis, mengedit, dan mengakses catatan mereka kapan saja. Fitur pencarian juga memudahkan dalam menemukan catatan dengan cepat, menjadikannya solusi praktis untuk menyimpan ide dan informasi penting.",
-    "Github": "ekizr.vercel.app"
+  "Role-based access control for students, staff, and administrators to manage complaints efficiently.",
+  "Automated workflow that reduces manual tracking and resolution tasks by 60%.",
+  "Real-time complaint tracking dashboard for better transparency and faster follow-up.",
+  "Automatic escalation of complaints after 48 hours of inaction to ensure timely resolution.",
+  "Currently being developed as a Progressive Web App (PWA) with push notifications and real-time updates for improved accessibility."
+],
+    "Title": "Smart Mess",
+    "TechStack": ["ReactJS", "Botstrap", "antd","CSS", "Material UI", "MongoDB", "ExpressJS", "NodeJS","Socket.io", "Firebase"],
+    "Img": "/mess.png",
+"Description": "This Mess Complaint Management System was developed to automate and streamline the resolution process for hostel-related issues. Designed with role-based access and workflow automation, the system reduces manual workload while enabling real-time tracking and efficient complaint monitoring. It includes automatic escalation of unresolved complaints and is evolving into a Progressive Web App (PWA) with push notifications and live updates to boost user engagement for 100+ hostel residents.",
+    "Github": "https://github.com/skjani314/MessMonetering"
   },
   {
-    "id": "Growtopia-Calculator",
-    "TechStack": ["GSAP", "AOS", "HTML", "CSS", "Javascript"],
-    "Title": "Growtopia-Calculator",
-    "Description": "Growotopia Surgery Shop Calculator membantu pemain Growtopia menghitung keuntungan dari penjualan tools di vending shop surgery. Cukup masukkan jumlah pack dan harga per pack untuk menghitung modal, profit kotor, dan profit bersih, sehingga memudahkan perencanaan dan strategi penjualan.",
-    "Features": [
-      "Menghitung modal awal, profit kotor, dan profit bersih secara otomatis dari penjualan tools.",
-      "Mensimulasikan jumlah pack yang dijual dan harga per pack untuk merencanakan strategi penjualan.",
-      "Memberikan ringkasan data penjualan untuk membantu analisis performa toko vending."
-    ],
-    "Github": "https://github.com/EkiZR/Growtopia-Surgery-Shop-Calculator",
-    "Link": "https://growtopiacalculator.vercel.app/",
-    "Img": "https://lh3.googleusercontent.com/pw/AP1GczNqjVfSWMu1M2XRNLeL3KM7soqBzsarT1lhi3rQWyKx6yp5YfK-nJhcdrsy2e-Dim1YtF0qwltbhY8y8RxZAADymL7Tjd2vtmI8gQIDBdrfcxkXf07Y00sCs-8c4Gq-Oq4l_HgiQk2vkmCk9nTP9_IM=w1920-h983-s-no-gm?authuser=0"
+    "id": "Online Attendance System",
+    "TechStack": ["Django", "Bootstrap", "HTML", "CSS", "MySQL"],
+    "Title": "Online Attendance System",
+"Description": "This Attendance Management System, built with Django and Bootstrap, facilitates efficient tracking of student attendance, teacher-class assignments, and admin management. It features role-based dashboards and secure access control, significantly reducing manual record-keeping and streamlining workflows. The responsive design improves data accessibility across devices, enabling educators to save time on administrative tasks and focus more on student engagement.",
+   "Features": [
+  "Role-based dashboards for teachers, students, and admins with secure access control.",
+  "Automated student attendance tracking and teacher-class assignment management.",
+  "Responsive Bootstrap UI for seamless access across different devices.",
+  "Reduced manual record-keeping by 80% and average daily attendance time by over 50%.",
+  "Improved attendance reset and class assignment procedures, cutting administrative task time by 20%."
+],
+    "Github": "https://github.com/skjani314/attendencesystem",
+    "Link": "https",
+    "Img": "/Attendence.png"
   }
 ]
 const certificateData = [
