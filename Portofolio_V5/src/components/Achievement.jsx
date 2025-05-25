@@ -1,4 +1,4 @@
-import { Trophy, Award } from "lucide-react";
+import { Trophy } from "lucide-react";
 
 const achievements = [
 	{
@@ -39,8 +39,8 @@ const achievements = [
 ];
 
 const Achievement = () => (
-	<section className="w-full py-12 md:py-20 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl mb-10">
-		<div className="max-w-5xl mx-auto px-4">
+	<section className="container mx-auto bg-gradient-to-br from-white/10 to-white/5  mb-10">
+		<div className="mx-auto px-4">
 			<h2
 				className="text-3xl md:text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]"
 				data-aos="fade-down"
@@ -59,12 +59,18 @@ const Achievement = () => (
 					Achievements
 				</span>
 			</h2>
-			<div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
 				{achievements.map((ach, idx) => (
 					<div
 						key={ach.id}
-						className="relative group bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 shadow-xl hover:shadow-[#6366f1]/20 transition-all duration-300 overflow-hidden"
-						data-aos={idx % 2 === 0 ? "fade-up-right" : "fade-up-left"}
+						className="relative  group bg-white/5 border border-white/10  p-5 flex flex-col shadow-xl hover:shadow-[#6366f1]/20 transition-all duration-300 overflow-hidden h-full"
+						data-aos={
+							idx % 3 === 0
+								? "fade-up-right"
+								: idx % 3 === 1
+								? "fade-up"
+								: "fade-up-left"
+						}
 						data-aos-duration="1200"
 					>
 						<div
@@ -75,7 +81,7 @@ const Achievement = () => (
 								<ach.icon className="w-7 h-7 text-[#a855f7]" />
 							</span>
 							<div>
-								<h3 className="text-xl font-semibold text-white">
+								<h3 className="text-lg font-semibold text-white">
 									{ach.title}
 								</h3>
 								<span className="text-xs text-gray-400">
@@ -86,7 +92,7 @@ const Achievement = () => (
 						<img
 							src={ach.img}
 							alt={ach.title}
-							className="w-full h-40 object-cover rounded-xl mb-2 border border-white/10"
+							className="w-full h-40 md:h-44 lg:h-40 object-cover rounded-xl mb-2 border border-white/10"
 							loading="lazy"
 						/>
 						<p className="text-gray-300 flex-1">{ach.description}</p>

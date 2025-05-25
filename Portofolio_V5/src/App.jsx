@@ -25,10 +25,11 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
         <>
           <Navbar />
           <AnimatedBackground />
+
           <Home />
           <About />
           <Portofolio />
-          <Achievement />
+          {/* <Achievement /> */}
           <ContactPage />
           <footer>
             <center>
