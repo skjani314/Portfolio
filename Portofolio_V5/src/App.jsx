@@ -10,6 +10,7 @@ import ContactPage from "./Pages/Contact";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
+import Achievement from "./components/Achievement";
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -27,6 +28,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
           <Home />
           <About />
           <Portofolio />
+          <Achievement />
           <ContactPage />
           <footer>
             <center>
@@ -34,7 +36,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
               <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
                 © 2025{" "}
                 <a href="https://flowbite.com/" className="hover:underline">
-                  EkiZR™
+                  Shaik Mahammad Jani™
                 </a>
                 . All Rights Reserved.
               </span>

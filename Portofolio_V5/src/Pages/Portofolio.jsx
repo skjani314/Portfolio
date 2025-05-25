@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { db, collection } from "../firebase";
-import { getDocs } from "firebase/firestore";
+import  { useEffect, useState, useCallback } from "react";
+
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
@@ -14,7 +13,7 @@ import TechStackIcon from "../components/TechStackIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Certificate from "../components/Certificate";
-import { Code, Award, Boxes } from "lucide-react";
+import { Code, Award, Boxes, Trophy } from "lucide-react";
 
 // Separate ShowMore/ShowLess button component
 const ToggleButton = ({ onClick, isShowingMore }) => (
@@ -120,6 +119,7 @@ const techStacks = [
   { icon: "vercel.svg", language: "Vercel" },
 ];
 
+
 export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
@@ -223,16 +223,19 @@ const projectData = [
 ]
 const certificateData = [
   {
-    "Img": "https://lh3.googleusercontent.com/pw/AP1GczPiUoU6qqqzKhC-RJ6HRlqj8-3Jh2cPYOcRjZ9pXy7YBrHlQlZQrdhnlfzAKq1M1_BafAoy5X5PSgR4OubWL1Ue82RIg_bUSh_sC1aT3RpFDkYISJtGWaMD6sBaGmD0h9YYGcGj8KMKGu5XGC8A0_Jz=w960-h679-s-no-gm?authuser=0"
+    "Img": "https://res.cloudinary.com/dyominbfs/image/upload/v1748135733/Cynosure_Hackthon_Certificate_zq0dq5.jpg"
   },
   {
-    "Img": "https://lh3.googleusercontent.com/pw/AP1GczP-TgH0oy_J8vnPvZ3ZAXl2i8b8Ail_t9pIm9oWHT6nblmdmRmOtEm8FVxEBDOTc3s3mxbN5YlkkE6oy3WBw5Ue3d7_1U1EsM9Z_UovjTVrmStOd2Ij-DuMIa0MdaVdc0wAUpD0wObUl_Fa3J9i3N_0=w960-h679-s-no-gm?authuser=0"
+    "Img": "https://res.cloudinary.com/dyominbfs/image/upload/v1748135713/Techxl_Hacthon_Certificate_ly8xui.jpg"
   },
   {
-    "Img": "https://lh3.googleusercontent.com/pw/AP1GczP_YGpKJMKHjPpNlR82hP8efPoNS2l5a61DsFDY9zvFb3W9CuUYADYocDX3uCkW4MnI6jEv2KTfb6Nf6q2X6rmONUBi4ZXrADWIEY-TcX_rGWgJQdwDU1uf-4nk6KHckkB7UykSsvX3qQeFOoFbMbI3=w960-h679-s-no-gm?authuser=0"
+    "Img": "https://res.cloudinary.com/dyominbfs/image/upload/v1748135725/Techzeon_Hackthon_Certificate_w3i61u.jpg"
   },
   {
-    "Img": "https://lh3.googleusercontent.com/pw/AP1GczPJOSoW2o3Jp83Aq1jSLfPOgO4ReuABqxyIjSoRb8lX7hFb_Q2DoY0XH7UhzLIVkrsWTkCkGn5YiIduXbSl2h9sA6J_4HgLtK_O5yKZbRogBqUexW0-9dZOLZX-0hchZrjUhN3y9Ifykm9JtYMzZpZ2=w960-h679-s-no-gm?authuser=0"
+    "Img": "https://res.cloudinary.com/dyominbfs/image/upload/v1748136415/Deep_Learning_nptl_nxgtpg.png"
+  },
+   {
+    "Img": "https://res.cloudinary.com/dyominbfs/image/upload/v1748136414/osd_nptl_ysvudj.png"
   }
 ]
 
@@ -259,7 +262,7 @@ const certificateData = [
   const toggleShowMore = useCallback((type) => {
     if (type === 'projects') {
       setShowAllProjects(prev => !prev);
-    } else {
+    } else if (type === 'certificates') {
       setShowAllCertificates(prev => !prev);
     }
   }, []);
@@ -373,6 +376,7 @@ const certificateData = [
               label="Tech Stack"
               {...a11yProps(2)}
             />
+            
           </Tabs>
         </AppBar>
 
@@ -450,6 +454,8 @@ const certificateData = [
               </div>
             </div>
           </TabPanel>
+
+         
         </SwipeableViews>
       </Box>
     </div>
