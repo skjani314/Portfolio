@@ -1,0 +1,8 @@
+# netlify.toml
+[build]
+  command = "npm run build" # Your build command
+  publish = "build"         # Your publish directory (e.g., 'dist', 'public')
+
+[build.environment]
+  NODE_VERSION = "18" # Or "20", "16", etc. Match your local Node.js version
+  NPM_FLAGS = "--legacy-peer-deps"
