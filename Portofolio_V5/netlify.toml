@@ -13,7 +13,7 @@
 
   # This is the directory that Netlify will deploy.
   # CHANGE 'build' to 'dist' if your build process outputs to a 'dist' folder.
-  publish = "Portofolio_V5/dist" # Changed from 'build' to 'dist'
+  publish = "dist" # Changed from 'build' to 'dist'
 
 # Optional: Set Node.js and NPM flags for consistency
 [build.environment]
