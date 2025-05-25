@@ -10,7 +10,7 @@ import ContactPage from "./Pages/Contact";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
-import Achievement from "./components/Achievement";
+// import Achievement from "./components/Achievement";
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
