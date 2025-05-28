@@ -10,7 +10,7 @@ import ContactPage from "./Pages/Contact";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import { AnimatePresence } from 'framer-motion';
-// import Achievement from "./components/Achievement";
+import Achievement from "./components/Achievement";
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -25,11 +25,11 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
         <>
           <Navbar />
           <AnimatedBackground />
-
+          <div className="h-16 pt-3"></div>
           <Home />
           <About />
           <Portofolio />
-          {/* <Achievement /> */}
+          <Achievement />
           <ContactPage />
           <footer>
             <center>

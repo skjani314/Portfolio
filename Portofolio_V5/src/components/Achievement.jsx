@@ -1,4 +1,5 @@
 import { Trophy } from "lucide-react";
+import  { useState } from "react";
 
 const achievements = [
     {
@@ -37,8 +38,68 @@ const achievements = [
     // Add more achievements as needed
 ];
 
-const Achievement = () => (
-    <div className="w-full py-10 md:py-16 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl mb-10">
+const Achievement = () => {
+
+const ToggleButton = ({ onClick, isShowingMore }) => (
+  <button
+    onClick={onClick}
+    className="
+      px-3 py-1.5
+      text-slate-300 
+      hover:text-white 
+      text-sm 
+      font-medium 
+      transition-all 
+      duration-300 
+      ease-in-out
+      flex 
+      items-center 
+      gap-2
+      bg-white/5 
+      hover:bg-white/10
+      rounded-md
+      border 
+      border-white/10
+      hover:border-white/20
+      backdrop-blur-sm
+      group
+      relative
+      overflow-hidden
+    "
+  >
+    <span className="relative z-10 flex items-center gap-2">
+      {isShowingMore ? "See Less" : "See More"}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={`
+          transition-transform 
+          duration-300 
+          ${isShowingMore ? "group-hover:-translate-y-0.5" : "group-hover:translate-y-0.5"}
+        `}
+      >
+        <polyline points={isShowingMore ? "18 15 12 9 6 15" : "6 9 12 15 18 9"}></polyline>
+      </svg>
+    </span>
+    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500/50 transition-all duration-300 group-hover:w-full"></span>
+  </button>
+);
+
+  const isMobile = window.innerWidth < 768;
+  const initialItems = isMobile ? 4 : 6;
+  const [showAllAchievements, setShowAllAchievements] = useState(false);
+
+const displayedAchievements = showAllAchievements? achievements : achievements.slice(0, initialItems);
+
+
+    return (<div className="w-full py-10 md:py-16 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl mb-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2
                 className="text-3xl md:text-4xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]"
@@ -57,21 +118,16 @@ const Achievement = () => (
                     Achievements
                 </span>
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                {achievements.map((ach, idx) => (
-                    <div
-                        key={ach.id}
-                        className=" group bg-white/5 border "
-                        data-aos={
-                            idx % 3 === 0
-                                ? "fade-up-right"
-                                : idx % 3 === 1
-                                ? "fade-up"
-                                : "fade-up-left"
-                        }
-                        data-aos-duration="1200"
-                    >
-                        {/* <div
+ <div className="container mx-auto flex justify-center items-center overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
+                              {displayedAchievements.map((ach, index) => (
+                   <div
+                    key={ach.id || index}
+                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                    className="relative p-4"
+                  >
+                        <div
                             className={`absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300 bg-gradient-to-br ${ach.color} -z-10 rounded-2xl`}
                         />
                         <div className="flex items-center gap-4 mb-2">
@@ -101,12 +157,23 @@ const Achievement = () => (
                             className="mt-2 inline-block text-sm font-semibold text-[#a855f7] hover:text-[#6366f1] transition-colors underline"
                         >
                             View Details &rarr;
-                        </a> */}
+                        </a>
                     </div>
                 ))}
+              </div>
             </div>
         </div>
-    </div>
-);
+         {
+                achievements.length > initialItems && (
+                                  <div className="mx-auto mt-6 w-full flex justify-center">
+                <ToggleButton
+                  onClick={() => setShowAllAchievements(prev=>(!prev))}
+                  isShowingMore={showAllAchievements}
+                />
+              </div>
+                )
+              }
+    </div>)
+};
 
 export default Achievement;

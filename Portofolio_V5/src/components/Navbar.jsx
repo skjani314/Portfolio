@@ -66,6 +66,7 @@ const Navbar = () => {
     };
 
     return (
+        <>
         <nav
         className={`fixed w-full top-0 z-50 transition-all duration-500 ${
             isOpen
@@ -171,7 +172,7 @@ const Navbar = () => {
             </div>
         </div>
     </nav>
-     
+     </>
    
     );
 };
